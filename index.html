@@ -61,6 +61,49 @@ section[id]{scroll-margin-top:88px}
 .hero-portrait{width:100%;height:100%;object-fit:cover;object-position:center 25%}
 @media(max-width:850px){.hero-side{right:4%!important;width:clamp(220px,34vw,350px)!important}}
 @media(max-width:560px){.hero-side{right:5%!important;top:43%!important;width:clamp(145px,42vw,230px)!important}}
+
+/* Hero portrait accent rings outside the image circle */
+.hero-side{
+  overflow:visible!important;
+  isolation:isolate;
+  box-shadow:none!important;
+  background:transparent!important;
+}
+.hero-side::before,
+.hero-side::after{
+  content:"";
+  position:absolute;
+  inset:-7%;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:-1;
+}
+.hero-side::before{
+  border:1px solid rgba(76,220,201,.28);
+  box-shadow:0 0 0 18px rgba(76,220,201,.045),0 0 0 42px rgba(76,220,201,.025);
+}
+.hero-side::after{
+  inset:-15%;
+  border:1px solid rgba(229,19,43,.10);
+  box-shadow:0 0 0 26px rgba(229,19,43,.025);
+}
+.hero-portrait{
+  position:relative;
+  z-index:1;
+  display:block;
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  object-position:center 25%;
+  border:1px solid rgba(76,220,201,.24);
+  box-shadow:0 30px 90px rgba(0,0,0,.35);
+}
+@media(max-width:560px){
+  .hero-side::before{inset:-6%;box-shadow:0 0 0 10px rgba(76,220,201,.04),0 0 0 23px rgba(76,220,201,.025)}
+  .hero-side::after{inset:-13%;box-shadow:0 0 0 14px rgba(229,19,43,.02)}
+}
+
 </style>
 </head>
 <body class="lock">
