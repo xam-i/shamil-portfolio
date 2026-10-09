@@ -54,6 +54,10 @@ section[id]{scroll-margin-top:88px}
  .section-head>p{max-width:100%!important;margin-top:14px!important}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Hero portrait: keep a single circular frame, remove the extra decorative rings */
+.hero:before{display:none!important}
+.hero-side{box-shadow:0 30px 90px rgba(0,0,0,.35)!important;border:1px solid rgba(76,220,201,.24)!important}
 </style>
 </head>
 <body class="lock">
